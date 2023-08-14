@@ -1,33 +1,29 @@
 package tn.ias.IasWebsite.entities;
 
-
+import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
-public class User {
+@Table( name = "User")
+public class User implements Serializable{
 	@Id
+	@Column(name="userId")
 	private Long iduser;
+	@Column
 	private String name;
+	@Column
 	private String email;
+	@Column
 	private String password;
+	@Column
 	private Date DateOfBirth;
+	@Column
 	private Long PhoneNumber;
-	
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public User(Long iduser, String name, String email, String password, Date dateOfBirth, Long phoneNumber) {
-		super();
-		this.iduser = iduser;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-		DateOfBirth = dateOfBirth;
-		PhoneNumber = phoneNumber;
-	}
 	public Long getIduser() {
 		return iduser;
 	}
@@ -64,14 +60,5 @@ public class User {
 	public void setPhoneNumber(Long phoneNumber) {
 		PhoneNumber = phoneNumber;
 	}
-	@Override
-	public String toString() {
-		return "User [iduser=" + iduser + ", name=" + name + ", email=" + email + ", password=" + password
-				+ ", DateOfBirth=" + DateOfBirth + ", PhoneNumber=" + PhoneNumber + "]";
-	}
-	  
-	
-	
-	
 
 }

@@ -1,21 +1,17 @@
-package tn.ias.IasWebsite.Services;
+package tn.ias.IasWebsite.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.ias.IasWebsite.entities.User;
-import tn.ias.IasWebsite.repository.UserRepository;
 
-public class UserServiceImpl implements IUserService {
+@Service
+public class UserServiceImpl implements UserService {
 
-	@Autowired
-	UserRepository userRep;
-	
 	@Override
-	public User addUser(User user) {
+	public User create() {
 		// TODO Auto-generated method stub
-		return userRep.save(user);
+		return null;
 	}
 	
-	
+
 }
- 
