@@ -60,5 +60,11 @@ public class User implements Serializable{
 	public void setPhoneNumber(Long phoneNumber) {
 		PhoneNumber = phoneNumber;
 	}
+	@Override
+	public String toString() {
+		return "User [iduser=" + iduser + ", name=" + name + ", email=" + email + ", password=" + password
+				+ ", DateOfBirth=" + DateOfBirth + ", PhoneNumber=" + PhoneNumber + "]";
+	}
 
+	
 }
