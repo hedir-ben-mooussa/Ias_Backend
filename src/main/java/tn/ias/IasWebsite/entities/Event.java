@@ -9,45 +9,54 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
-@Table (name = "Event")
+@Table(name = "Event")
 public class Event implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="postID")
-	
-private Long PostId;
+	@Column(name = "postID")
+
+	private Long PostId;
 	@Column
-private String imageUrl;
+	private String imageUrl;
 	@Column
-private String tittle;
-	
+	private String tittle;
+
 	public Long getPostId() {
 		return PostId;
 	}
+
 	public void setPostId(Long postId) {
 		PostId = postId;
 	}
+
 	public String getImageUrl() {
 		return imageUrl;
 	}
+
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
 	public String getTittle() {
 		return tittle;
 	}
+
 	public void setTittle(String tittle) {
 		this.tittle = tittle;
 	}
+
 	public Date getCreated() {
 		return created;
 	}
+
 	public void setCreated(Date created) {
 		this.created = created;
 	}
+
 	@Column
-private Date created;
+	private Date created;
 
 	@Override
 	public String toString() {

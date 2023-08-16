@@ -1,5 +1,7 @@
 package tn.ias.IasWebsite.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,17 +27,17 @@ public class EventController {
    public Event createEvent(@RequestBody Event event) {
 		return eventService.create(event);
 	}
-	@GetMapping("update/{PostId}")
-	public Event updateevent(@PathVariable("PostId") Long PostId, @RequestBody Event event) {
-	return null;
+	@GetMapping("getall")
+	public  List<Event> getAll() {
+	return eventService.getallEvents();
 	}
 	@PutMapping("update/{PostId}")
 	public Event updateEvent(@PathVariable("PostId") Long PostId, @RequestBody Event event) {
 		return null;
 	}
 	@DeleteMapping("delete/{PostId}")
-	public void DeletEvent(@PathVariable ("PostId") Long PostId) {
-		;	
+	public void DeletEvent(@PathVariable ("PostId") Long PostId){
+		eventService.deleteEvent(PostId);	
 	}
 	
 

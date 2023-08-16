@@ -20,10 +20,6 @@ public class User implements Serializable{
 	private String email;
 	@Column
 	private String password;
-	@Column
-	private Date DateOfBirth;
-	@Column
-	private Long PhoneNumber;
 	public Long getIduser() {
 		return iduser;
 	}
@@ -48,23 +44,14 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getDateOfBirth() {
-		return DateOfBirth;
-	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		DateOfBirth = dateOfBirth;
-	}
-	public Long getPhoneNumber() {
-		return PhoneNumber;
-	}
-	public void setPhoneNumber(Long phoneNumber) {
-		PhoneNumber = phoneNumber;
-	}
 	@Override
 	public String toString() {
-		return "User [iduser=" + iduser + ", name=" + name + ", email=" + email + ", password=" + password
-				+ ", DateOfBirth=" + DateOfBirth + ", PhoneNumber=" + PhoneNumber + "]";
+		return "User [iduser=" + iduser + ", name=" + name + ", email=" + email + ", password=" + password + "]";
+	}
+	
+	
+	
 	}
 
 	
-}
+
