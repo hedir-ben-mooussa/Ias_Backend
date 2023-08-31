@@ -17,8 +17,8 @@ public class CommentServiceImp implements CommentService {
      CommentRepository commentRepo; //inject comment repo into service
 
 	@Override
-	public Comment create(Comment c) {
-		return commentRepo.save(c);
+	public Comment create(Comment comment) {
+		return commentRepo.save(comment);
 	}
 
 	@Override

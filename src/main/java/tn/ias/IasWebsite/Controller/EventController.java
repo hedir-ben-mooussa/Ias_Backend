@@ -2,7 +2,9 @@ package tn.ias.IasWebsite.Controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +20,7 @@ import tn.ias.IasWebsite.entities.Event;
 import tn.ias.IasWebsite.services.EventServiceImpl;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*" )
 @RequestMapping("/event")
 public class EventController {
 	@Autowired

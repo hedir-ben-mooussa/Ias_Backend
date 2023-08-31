@@ -5,10 +5,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import tn.ias.IasWebsite.entities.enums.IEEE_Member;
 @Entity
 @Table(name = "JoinUs")
 public class Joinus implements Serializable{
@@ -26,8 +30,10 @@ public class Joinus implements Serializable{
 	private String email;
 	@Column
 	private Date dateofbirth;
-	@Column
-	private Boolean IEEE_member;
+	
+    @Enumerated(EnumType.STRING)
+	private IEEE_Member IEEE_member;
+	
 	public int getId() {
 		return id;
 	}
@@ -58,17 +64,18 @@ public class Joinus implements Serializable{
 	public void setDateofbirth(Date dateofbirth) {
 		this.dateofbirth = dateofbirth;
 	}
-	public Boolean getIEEE_member() {
+	public IEEE_Member getIEEE_member() {
 		return IEEE_member;
 	}
-	public void setIEEE_member(Boolean iEEE_member) {
+	public void setIEEE_member(IEEE_Member iEEE_member) {
 		IEEE_member = iEEE_member;
 	}
 	@Override
 	public String toString() {
-		return "Joinus [id=" + id + ", phonenumber=" + phonenumber + ", fullname=" + fullname + ", email=" + email
+		return "Joinus [id=" + id + ", fullname=" + fullname + ", phonenumber=" + phonenumber + ", email=" + email
 				+ ", dateofbirth=" + dateofbirth + ", IEEE_member=" + IEEE_member + "]";
 	}
+		
 	
 }
 
