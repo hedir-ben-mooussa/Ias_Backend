@@ -26,12 +26,23 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void DeleteUser(Long id) {
 		userRepo.deleteById(id);
-		
+
 	}
 
 	@Override
-	public User updateUser(Long id, User user) {	
+	public User updateUser(Long id, User user) {
 		return null;
+	}
+
+	@Override
+	public boolean login(String email, String password) {
+
+		User user = this.userRepo.findByEmail(email);
+		if (user != null) {
+			return true;
+		}
+		return false;
+
 	}
 
 }

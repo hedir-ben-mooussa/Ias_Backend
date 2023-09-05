@@ -21,46 +21,49 @@ public class Event implements Serializable {
 	@Column
 	private String imageUrl;
 	@Column
-	private String tittle;
-
+	private String title;
+	@Column
+	private String description;
+	@Column
+	private Date date;
+	
 	public Long getPostId() {
 		return PostId;
 	}
-
 	public void setPostId(Long postId) {
 		PostId = postId;
 	}
-
 	public String getImageUrl() {
 		return imageUrl;
 	}
-
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-
-	public String getTittle() {
-		return tittle;
+	public String getTitle() {
+		return title;
 	}
-
-	public void setTittle(String tittle) {
-		this.tittle = tittle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-
-	public Date getCreated() {
-		return created;
+	public String getDescription() {
+		return description;
 	}
-
-	public void setCreated(Date created) {
-		this.created = created;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-	@Column
-	private Date created;
-
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	@Override
 	public String toString() {
-		return "Event [PostId=" + PostId + ", imageUrl=" + imageUrl + ", tittle=" + tittle + ", created=" + created
-				+ "]";
+		return "Event [PostId=" + PostId + ", imageUrl=" + imageUrl + ", title=" + title + ", description="
+				+ description + ", date=" + date + "]";
 	}
+	
+	
+
+	
 }
